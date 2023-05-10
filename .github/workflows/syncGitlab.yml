@@ -9,9 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     name: Git Repo Sync
     steps:
+    - name: Wait for 1 minutes
+      uses: jakejarvis/wait-action@v1
+      with:
+        time: '1m'
+  
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
+  
     - uses: wangchucheng/git-repo-sync@master
       with:
         target-url: 'https://gitlab.com/huoxin/auto-collapse-long-images.git'
