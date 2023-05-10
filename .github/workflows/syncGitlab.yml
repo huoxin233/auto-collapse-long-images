@@ -9,10 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Git Repo Sync
     steps:
-    - name: Wait for 1 minutes
-      uses: jakejarvis/wait-action@v1
+    - name: Wait for flarum-bot to commit
+      uses: lewagon/wait-on-check-action@v1.3.1
       with:
-        time: '1m'
+        ref: ${{ github.ref }}
+        check-name: 'Build JavaScript assets'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        wait-interval: 10
   
     - uses: actions/checkout@v2
       with:
