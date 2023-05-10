@@ -14,7 +14,7 @@ app.initializers.add('huoxin/auto-collapse-long-images', () => {
         node.addEventListener('load', function () {
           if (node.height > maxHeight) {
             if (app.forum.attribute('huoxin-auto-collapse-long-images.use-flarumite-simple-spoilers') == 1) {
-              const customText = '';
+              const customText = app.forum.attribute('huoxin-auto-collapse-long-images.flarumite-simple-spoilers-custom-text');
               const flarumiteSpoiler = `
                 <details class="flarumite-spoiler">
                   <summary>

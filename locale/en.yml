@@ -7,5 +7,8 @@ huoxin-auto-collapse-long-images:
     use-flarumite-simple-spoilers:
       label: Use Flarumite Simple Spoilers
       help: Use Flarumite Simple Spoilers instead of normal spoilers. Note:Flarumite Simple Spoilers must be enabled for this to work
+      custom-text:
+        label: Custom Text on Flarumite Simple Spoilers
+        help: The text that is being shown on the spoilers, default text:'Click to reveal'
 
   forum:
