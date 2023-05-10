@@ -7,5 +7,11 @@ app.initializers.add('huoxin/auto-collapse-long-images', () => {
       type: 'number',
       min: 0,
       label: app.translator.trans('huoxin-auto-collapse-long-images.admin.max-height.label')
+    })
+    .registerSetting({
+      setting: 'huoxin-auto-collapse-long-images.use-flarumite-simple-spoilers',
+      type: 'switch',
+      label: app.translator.trans('huoxin-auto-collapse-long-images.admin.use-flarumite-simple-spoilers.label'),
+      help: app.translator.trans('huoxin-auto-collapse-long-images.admin.use-flarumite-simple-spoilers.help')
     });
 });

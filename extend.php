@@ -23,6 +23,7 @@ return [
     new Extend\Locales(__DIR__.'/locale'),
 
     (new Extend\Settings())
-        ->serializeToForum('huoxin-auto-collapse-long-images.max-height', 'huoxin-auto-collapse-long-images.max-height'),
+        ->serializeToForum('huoxin-auto-collapse-long-images.max-height', 'huoxin-auto-collapse-long-images.max-height')
+        ->serializeToForum('huoxin-auto-collapse-long-images.use-flarumite-simple-spoilers', 'huoxin-auto-collapse-long-images.use-flarumite-simple-spoilers'),
 
 ];
