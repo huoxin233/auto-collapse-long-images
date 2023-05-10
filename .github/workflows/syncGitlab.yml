@@ -1,0 +1,19 @@
+name: syncGitlab
+
+on: 
+  - push
+  - delete
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    name: Git Repo Sync
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: wangchucheng/git-repo-sync@master
+      with:
+        target-url: 'https://gitlab.com/huoxin/auto-collapse-long-images.git'
+        target-username: 'huoxin'
+        target-token: ${{ secrets.GITLAB_ACCESS_TOKEN }}
