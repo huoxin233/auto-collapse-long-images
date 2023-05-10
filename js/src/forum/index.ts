@@ -9,7 +9,7 @@ app.initializers.add('huoxin/auto-collapse-long-images', () => {
     maxHeight = maxHeight > 0 ? maxHeight : 0;
     console.log(maxHeight);
     this.element
-      .querySelectorAll('img:not(.emoji):not(.Avatar):not(.PostMeta-ip img):not([data-reaction]):not([data-link-preview]):not(.flamoji img)')
+      .querySelectorAll('img:not(.emoji):not(.Avatar):not(.PostMeta-ip img):not([data-reaction]):not([data-link-preview]):not(.flamoji img):not(.spoiler img):(.flarumite-spoiler--content img)')
       .forEach((node) => {
         node.addEventListener('load', function() {
         if (node.height > maxHeight) {

@@ -24,7 +24,7 @@ flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default().initializers.add('huoxin
     var maxHeight = parseInt(flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default().forum.attribute('huoxin-auto-collapse-long-images.max-height')) || 0; // get max height from settings
     maxHeight = maxHeight > 0 ? maxHeight : 0;
     console.log(maxHeight);
-    this.element.querySelectorAll('img:not(.emoji):not(.Avatar):not(.PostMeta-ip img):not([data-reaction]):not([data-link-preview]):not(.flamoji img)').forEach(function (node) {
+    this.element.querySelectorAll('img:not(.emoji):not(.Avatar):not(.PostMeta-ip img):not([data-reaction]):not([data-link-preview]):not(.flamoji img):not(.spoiler img):(.flarumite-spoiler--content img)').forEach(function (node) {
       node.addEventListener('load', function () {
         if (node.height > maxHeight) {
           var spoiler = document.createElement('details');
