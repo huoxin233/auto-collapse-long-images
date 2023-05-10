@@ -22,4 +22,8 @@ return [
         ->js(__DIR__.'/js/dist/admin.js'),
         
     new Extend\Locales(__DIR__.'/locale'),
+
+    (new Extend\Settings())
+        ->serializeToForum('huoxin-auto-collapse-long-images.max-height', 'huoxin-auto-collapse-long-images.max-height'),
+
 ];

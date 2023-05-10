@@ -14,7 +14,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flarum_admin_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flarum_admin_app__WEBPACK_IMPORTED_MODULE_0__);
 
 flarum_admin_app__WEBPACK_IMPORTED_MODULE_0___default().initializers.add('huoxin/auto-collapse-long-images', function () {
-  console.log('[huoxin/auto-collapse-long-images] Hello, admin!');
+  flarum_admin_app__WEBPACK_IMPORTED_MODULE_0___default().extensionData["for"]('huoxin-auto-collapse-long-images').registerSetting({
+    setting: 'huoxin-auto-collapse-long-images.max-height',
+    type: 'number',
+    min: 0,
+    label: flarum_admin_app__WEBPACK_IMPORTED_MODULE_0___default().translator.trans('huoxin-auto-collapse-long-images.admin.max-height.label')
+  });
 });
 
 /***/ }),

@@ -19,11 +19,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default().initializers.add('huoxin/auto-collapse-images', function () {
+flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default().initializers.add('huoxin/auto-collapse-long-images', function () {
   (0,flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__.extend)((flarum_forum_components_CommentPost__WEBPACK_IMPORTED_MODULE_2___default().prototype), 'oncreate', function (vnode) {
+    var maxHeight = parseInt(flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default().forum.attribute('huoxin-auto-collapse-long-images.max-height')) || 0; // get max height from settings
+    maxHeight = maxHeight > 0 ? maxHeight : 0;
+    console.log(maxHeight);
     this.element.querySelectorAll('img:not(.emoji):not(.Avatar):not(.PostMeta-ip img):not([data-reaction]):not([data-link-preview]):not(.flamoji img)').forEach(function (node) {
       node.addEventListener('load', function () {
-        if (node.height > 800) {
+        if (node.height > maxHeight) {
           var spoiler = document.createElement('details');
           spoiler.classList.add('spoiler');
           $(node).wrap(spoiler);
