@@ -12,7 +12,6 @@
 namespace Huoxin\CollapseLongImages;
 
 use Flarum\Extend;
-use Illuminate\Contracts\Events\Dispatcher;
 
 return [
     (new Extend\Frontend('forum'))
