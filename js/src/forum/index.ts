@@ -15,33 +15,52 @@ app.initializers.add('huoxin/auto-collapse-long-images', () => {
           if (node.height > maxHeight) {
             if (app.forum.attribute('huoxin-auto-collapse-long-images.use-flarumite-simple-spoilers') == 1) {
               const customText = app.forum.attribute('huoxin-auto-collapse-long-images.flarumite-simple-spoilers-custom-text');
-              const flarumiteSpoiler = `
-                <details class="flarumite-spoiler">
-                  <summary>
-                    <span class="flarumite-spoiler--title flarumite-spoiler--title-closed">
-                      <span class="flarumite-spoiler--custom-text">${customText}</span>
-                      <span class="flarumite-spoiler--default-text">Click to reveal</span>
-                    </span>
-                    <span class="flarumite-spoiler--title flarumite-spoiler--title-open">
-                      <span class="flarumite-spoiler--custom-text">${customText}</span>
-                      <span class="flarumite-spoiler--default-text">Click to reveal</span>
-                    </span>
-                  </summary>
-                  <div class="flarumite-spoiler--content">
-                    <p>${node.outerHTML}</p>
-                  </div>
-                </details>`;
-              $(node).replaceWith(flarumiteSpoiler);
+              const spoilerMarkup = isFancybox(node)
+                  ? generateFlarumiteSpoiler(node.parentNode.outerHTML, customText)
+                  : generateFlarumiteSpoiler(node.outerHTML, customText);
+              isFancybox(node)
+              ? $(node.parentNode).replaceWith(spoilerMarkup)
+              : $(node).replaceWith(spoilerMarkup);
             } else {
-              const normalSpoiler = `
-              <details class="spoiler">
-                <p>${node.outerHTML}</p>
-              </div>`;
-              
-              $(node).replaceWith(normalSpoiler);
+              const spoilerMarkup = isFancybox(node)
+                  ? generateNormalSpoiler(node.parentNode.outerHTML)
+                  : generateNormalSpoiler(node.outerHTML);
+              isFancybox(node)
+              ? $(node.parentNode).replaceWith(spoilerMarkup)
+              : $(node).replaceWith(spoilerMarkup);
             }
           }
         })
       });
   });
 });
+
+function isFancybox(node) {
+  return $(node).parent().attr('data-fancybox');
+}
+
+function generateFlarumiteSpoiler(imageHtml, customText) {
+  return `
+    <details class="flarumite-spoiler">
+      <summary>
+        <span class="flarumite-spoiler--title flarumite-spoiler--title-closed">
+          <span class="flarumite-spoiler--custom-text">${customText}</span>
+          <span class="flarumite-spoiler--default-text">Click to reveal</span>
+        </span>
+        <span class="flarumite-spoiler--title flarumite-spoiler--title-open">
+          <span class="flarumite-spoiler--custom-text">${customText}</span>
+          <span class="flarumite-spoiler--default-text">Click to hide</span>
+        </span>
+      </summary>
+      <div class="flarumite-spoiler--content">
+        <p>${imageHtml}</p>
+      </div>
+    </details>`;
+}
+
+function generateNormalSpoiler(imageHtml) {
+  return `
+    <details class="spoiler">
+      <p>${imageHtml}</p>
+    </details>`;
+}
