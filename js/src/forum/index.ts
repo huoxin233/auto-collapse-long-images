@@ -33,10 +33,12 @@ app.initializers.add('huoxin/auto-collapse-long-images', () => {
                 </details>`;
               $(node).replaceWith(flarumiteSpoiler);
             } else {
-              const normalSpoiler = document.createElement('details');
-              normalSpoiler.classList.add('spoiler');
-
-              $(node).wrap(normalSpoiler);
+              const normalSpoiler = `
+              <details class="spoiler">
+                <p>${node.outerHTML}</p>
+              </div>`;
+              
+              $(node).replaceWith(normalSpoiler);
             }
           }
         })
