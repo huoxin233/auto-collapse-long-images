@@ -6,7 +6,8 @@ app.initializers.add('huoxin/auto-collapse-long-images', () => {
       setting: 'huoxin-auto-collapse-long-images.max-height',
       type: 'number',
       min: 0,
-      label: app.translator.trans('huoxin-auto-collapse-long-images.admin.max-height.label')
+      label: app.translator.trans('huoxin-auto-collapse-long-images.admin.max-height.label'),
+      help: app.translator.trans('huoxin-auto-collapse-long-images.admin.max-height.help')
     })
     .registerSetting({
       setting: 'huoxin-auto-collapse-long-images.use-flarumite-simple-spoilers',
@@ -18,6 +19,7 @@ app.initializers.add('huoxin/auto-collapse-long-images', () => {
       setting: 'huoxin-auto-collapse-long-images.flarumite-simple-spoilers-custom-text',
       type: 'text',
       label: app.translator.trans('huoxin-auto-collapse-long-images.admin.use-flarumite-simple-spoilers.custom-text.label'),
-      help: app.translator.trans('huoxin-auto-collapse-long-images.admin.use-flarumite-simple-spoilers.custom-text.help')
+      help: app.translator.trans('huoxin-auto-collapse-long-images.admin.use-flarumite-simple-spoilers.custom-text.help'),
+      placeholder: app.translator.trans('huoxin-auto-collapse-long-images.admin.use-flarumite-simple-spoilers.custom-text.placeholder')
     });
 });

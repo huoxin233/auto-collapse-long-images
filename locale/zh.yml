@@ -1,0 +1,19 @@
+huoxin-auto-collapse-long-images:
+  # For more details on the format
+  # Checkout https://docs.flarum.org/extend/i18n/#appendix-a-standard-key-format
+  admin:
+    max-height:
+      label: 自动折叠图片的最大高度（以像素为单位）
+      help: 高度超过此值的图片将默认折叠。默认值为0，表示所有图片都被折叠。
+    use-flarumite-simple-spoilers:
+      label: 使用 Flarumite Simple Spoilers 插件
+      help: 是否使用 Flarumite Simple Spoilers 代替默认的折叠插件。需要安装并启用 Flarumite Simple Spoilers 才能使用此功能。
+      custom-text:
+        label: 自定义 Flarumite Simple Spoilers 显示文字
+        help: 显示在 Flarumite Simple Spoilers 上的文本。默认为"点击显示"。
+        placeholder: 点击显示
+
+  forum:
+    default-text:
+      closed: 点击显示
+      open: 点击隐藏

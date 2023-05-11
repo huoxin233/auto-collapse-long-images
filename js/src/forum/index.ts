@@ -45,11 +45,11 @@ function generateFlarumiteSpoiler(imageHtml, customText) {
       <summary>
         <span class="flarumite-spoiler--title flarumite-spoiler--title-closed">
           <span class="flarumite-spoiler--custom-text">${customText}</span>
-          <span class="flarumite-spoiler--default-text">Click to reveal</span>
+          <span class="flarumite-spoiler--default-text">${app.translator.trans('huoxin-auto-collapse-long-images.forum.default-text.closed')}</span>
         </span>
         <span class="flarumite-spoiler--title flarumite-spoiler--title-open">
           <span class="flarumite-spoiler--custom-text">${customText}</span>
-          <span class="flarumite-spoiler--default-text">Click to hide</span>
+          <span class="flarumite-spoiler--default-text">${app.translator.trans('huoxin-auto-collapse-long-images.forum.default-text.open')}</span>
         </span>
       </summary>
       <div class="flarumite-spoiler--content">
