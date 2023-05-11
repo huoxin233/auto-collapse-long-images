@@ -8,10 +8,14 @@ huoxin-auto-collapse-long-images:
     use-flarumite-simple-spoilers:
       label: Use Flarumite Simple Spoilers
       help: Whether to use the Flarumite Simple Spoilers extension instead of regular spoilers. This requires Flarumite Simple Spoilers to be installed and enabled.
-    custom-text:
-      label: Custom text on Flarumite Simple Spoilers
-      help: Text to display on Flarumite Simple Spoilers, if enabled. Default text is 'Click to reveal'.
-      placeholder: Click to reveal
+      custom-text-closed:
+        label: Custom text on Flarumite Simple Spoilers when closed
+        help: Text to display on Flarumite Simple Spoilers when the spoiler is closed. Default text is 'Click to reveal'.
+        placeholder: Click to reveal
+      custom-text-open:
+        label: Custom text on Flarumite Simple Spoilers when open
+        help: Text to display on Flarumite Simple Spoilers when the spoiler is open. Default text is 'Click to hide'.
+        placeholder: Click to hide
 
   forum:
     default-text:
