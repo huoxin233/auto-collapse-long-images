@@ -1,6 +1,6 @@
 {
     "name": "huoxin/auto-collapse-long-images",
-    "description": "collapse long images",
+    "description": "Auto collapse long images",
     "keywords": [
         "flarum"
     ],
@@ -24,11 +24,11 @@
     "extra": {
         "flarum-extension": {
             "title": "Auto Collapse Long Images",
-            "category": "",
+            "category": "feature",
             "icon": {
-                "name": "",
+                "name": "fas fa-window-minimize",
                 "color": "",
-                "backgroundColor": ""
+                "backgroundColor": "#f5f5f5"
             }
         },
         "flarum-cli": {
